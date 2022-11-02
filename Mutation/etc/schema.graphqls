@@ -1,0 +1,12 @@
+#GraphQl Schema for Mutation
+
+type Mutation {
+editCustomerName (customerId: Int! @doc(description: "Customer Id to load the customer Data"),
+firstName: String! @doc(description: "First Name as a input"),
+lastName: String! @doc(description: "Last Name as a input")):
+EditCustomerName @resolver(class: "Piyush\\Mutation\\Model\\Resolver\\EditCustomerName") @doc(description: "The EditCustomer name Mutation will edit the name of the customer")
+}
+type EditCustomerName @doc(description: "Testcustomer defines the customer name and other details") {
+    firstName: String
+    lastName: String
+}
